@@ -1,0 +1,310 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================= */
+:root {
+    --vautro-green: #2d5a27;       /* Verde Bosque Principal */
+    --vautro-dark-green: #1a3c17;  /* Verde Oscuro para Títulos */
+    --vautro-light-green: #dcedc1; /* Fondo suave / Bordes */
+    --vautro-accent: #a8e6cf;      /* Verde Menta */
+    --vautro-white: #ffffff;
+    --vautro-gray: #f8f9fa;
+    --vautro-bg-contrast: #84a59d;
+    --vautro-cream-logo: #F5F1E9;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px; /* Evita que la navbar tape los títulos al scrollear */
+}
+
+.bg-vautro-brand {
+    background-color: var(--vautro-bg-contrast) !important;
+}
+
+/* Clase personalizada para la Navbar */
+.bg-vautro-sage {
+    background-color: var(--vautro-bg-contrast) !important; /* <--- CAMBIA ESTO */
+    transition: background-color 0.3s ease;
+}
+
+/* Colores de Utilidad */
+
+.text-success {
+    color: var(--vautro-green) !important;
+}
+
+.text-dark-green {
+    color: var(--vautro-dark-green) !important;
+}
+
+/* =========================================
+   2. COMPONENTES COMUNES (Botones y Navbar)
+   ========================================= */
+
+/* Botones Principales */
+.btn-primary {
+    background-color: var(--vautro-green);
+    border-color: var(--vautro-green);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--vautro-dark-green);
+    border-color: var(--vautro-dark-green);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    color: var(--vautro-green);
+    border-color: var(--vautro-green);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--vautro-green);
+    border-color: var(--vautro-green);
+}
+
+/* Botones de Redes Sociales */
+.btn-outline-dark {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Navbar */
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #333 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--vautro-green) !important;
+}
+
+/* =========================================
+   3. SECCIÓN HERO
+   ========================================= */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/main-hero.avif') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-logo {
+    max-width: 250px;
+    height: auto;
+}
+
+/* =========================================
+   4. SECCIONES DE CONTENIDO (Proceso y Cards)
+   ========================================= */
+
+/* Sección "Cómo lo hacemos" */
+.process-img-container {
+    width: 350px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.process-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*border-radius: 50%;*/
+    border: 5px solid var(--vautro-light-green);
+    transition: transform 0.3s ease;
+}
+
+.process-img:hover {
+    transform: scale(1.05);
+}
+
+/* Cambiamos el color de los iconos y precios para que usen tu verde */
+.icon-circle i {
+    color: var(--vautro-green);
+}
+
+.price-box h3 {
+    color: var(--vautro-dark-green); /* Verde oscuro para que resalte el precio */
+    font-size: 1.8rem;
+}
+
+/* Botones alineados a la marca */
+.btn-outline-success {
+    color: var(--vautro-green);
+    border-color: var(--vautro-green);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--vautro-green);
+    border-color: var(--vautro-green);
+    color: white;
+}
+
+.service-card {
+    flex: 0 1 calc(33.333% - 2rem); 
+    min-width: 300px; /* Para que no se achiquen demasiado */
+    max-width: 380px;
+    background-color: var(--vautro-white);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* =========================================
+   5. SECCIÓN EQUIPO
+   ========================================= */
+.team-member img {
+    width: 100%;
+    max-width: 280px;
+    height: 350px;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+.team-member h4 {
+    color: var(--vautro-green);
+    margin-top: 15px;
+}
+/* =========================================
+   6. SECCIÓN IMPACTO
+   ========================================= */
+
+/* Sección de Impacto */
+#impacto {
+    /* Un degradado sutil hace que la sección no se vea plana */
+    background: linear-gradient(135deg, var(--vautro-bg-contrast), #2d5a27);
+}
+
+.impact-item h2 {
+    /* El color crema de tu logo queda genial aquí para los números */
+    color: #F5F1E9; 
+    letter-spacing: -2px;
+}
+
+.impact-item p {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   7. SECCIÓN CONTACTO PERSONALIZADA
+   ========================================= */
+
+/* Círculos pequeños para los iconos de email/ubicación */
+.icon-circle-small {
+    width: 45px;
+    height: 45px;
+    background-color: var(--vautro-light-green); /* El verde menta suave que tienes */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Efecto hover para el email */
+.hover-green:hover {
+    color: var(--vautro-green) !important;
+}
+
+/* Botones de redes sociales personalizados */
+.social-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--vautro-gray);
+    color: var(--vautro-dark-green);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.social-btn:hover {
+    background-color: var(--vautro-green);
+    color: var(--vautro-white);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(45, 90, 39, 0.2);
+}
+
+/* Borde sutil para la imagen principal */
+.border-vautro {
+    border: 8px solid var(--vautro-gray);
+}
+
+/* =========================================
+   6. RESPONSIVE / MEDIA QUERIES
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    .hero-logo {
+        max-width: 180px;
+    }
+    .process-img-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .service-card {
+        flex: 0 1 100%;
+    }
+
+    .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    border-color: var(--vautro-green);
+}
+
+@media (max-width: 1200px) {
+    .service-card {
+        flex: 0 1 calc(50% - 2rem);
+    }
+}
