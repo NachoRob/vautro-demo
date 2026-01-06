@@ -141,8 +141,6 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /*border-radius: 50%;*/
-    border: 5px solid var(--vautro-light-green);
     transition: transform 0.3s ease;
 }
 
@@ -150,7 +148,6 @@ section {
     transform: scale(1.05);
 }
 
-/* Cambiamos el color de los iconos y precios para que usen tu verde */
 .icon-circle i {
     color: var(--vautro-green);
 }
