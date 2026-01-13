@@ -2,13 +2,13 @@
    1. VARIABLES Y CONFIGURACIÓN GLOBAL
    ========================================= */
 :root {
-    --vautro-green: #2d5a27;       /* Verde Bosque Principal */
+    --vautro-green: #485137;       /* Verde Bosque Principal */
     --vautro-dark-green: #1a3c17;  /* Verde Oscuro para Títulos */
     --vautro-light-green: #dcedc1; /* Fondo suave / Bordes */
     --vautro-accent: #a8e6cf;      /* Verde Menta */
     --vautro-white: #ffffff;
     --vautro-gray: #f8f9fa;
-    --vautro-bg-contrast: #84a59d;
+    --vautro-bg-contrast: #a2a583;
     --vautro-cream-logo: #F5F1E9;
 }
 
@@ -126,28 +126,31 @@ section {
     height: auto;
 }
 
+
 /* =========================================
    4. SECCIONES DE CONTENIDO (Proceso y Cards)
    ========================================= */
 
 /* Sección "Cómo lo hacemos" */
 .process-img-container {
-    width: 350px;
-    height: 250px;
+    width: 200px;  /* Ajusta el tamaño que quieras (antes tenías 350px) */
+    height: 200px; /* Debe ser igual al ancho para que sea un círculo */
     margin: 0 auto;
+    overflow: hidden; /* Corta lo que sobre de la imagen */
+    border-radius: 50%; /* Esto hace el círculo */
 }
 
 .process-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Esto es clave: recorta la foto para que llene el círculo */
     transition: transform 0.3s ease;
 }
 
 .process-img:hover {
     transform: scale(1.05);
 }
-
+    
 .icon-circle i {
     color: var(--vautro-green);
 }
@@ -273,32 +276,38 @@ section {
 }
 
 
-/* 1. Definición global: Todo el sitio usará Inter */
+/* =========================================
+   8. SISTEMA DE TIPOGRAFÍA (Inter & Fraunces)
+   ========================================= */
+
+/* Base para todo el sitio */
 body {
     font-family: 'Inter', sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* 3. Ajustes opcionales para que Inter se vea mejor en Bootstrap */
-p, a, span, li, .btn {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400; /* Peso normal para lectura */
+/* Títulos Especiales (Estilo Recoleta) */
+.font-recoleta {
+    font-family: "Fraunces", serif !important;
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+    font-weight: 700; /* Fraunces usa este peso para verse "Gorda" y retro */
+    letter-spacing: -0.02em;
 }
 
+/* Forzar Inter en elementos comunes */
+p, a, span, li, .btn, .nav-link {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Ajuste de pesos para Inter */
 .fw-bold {
-    font-weight: 700 !important; /* Aseguramos que los negritos de Inter sean potentes */
+    font-weight: 700 !important;
 }
 
 .lead {
     font-weight: 400;
     letter-spacing: -0.01em;
-}
-
-/* Font Recoleta títulos "como lo hacemos", "nuestros servicios", "historias de impacto", "el equipo" */
-.font-recoleta {
-  font-family: "Fraunces", serif !important; /* El !important asegura que sobrescriba a Bootstrap si es necesario */
-  font-variation-settings: "SOFT" 100, "WONK" 1;
 }
 
 /* =========================================
@@ -333,4 +342,5 @@ p, a, span, li, .btn {
     .service-card {
         flex: 0 1 calc(50% - 2rem);
     }
+}
 }
