@@ -103,7 +103,7 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('../img/main-hero.avif') no-repeat center center;
+    background: url('../img/main-hero.JPG') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -270,6 +270,35 @@ section {
 /* Borde sutil para la imagen principal */
 .border-vautro {
     border: 8px solid var(--vautro-gray);
+}
+
+
+/* 1. Definición global: Todo el sitio usará Inter */
+body {
+    font-family: 'Inter', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Ajustes opcionales para que Inter se vea mejor en Bootstrap */
+p, a, span, li, .btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Peso normal para lectura */
+}
+
+.fw-bold {
+    font-weight: 700 !important; /* Aseguramos que los negritos de Inter sean potentes */
+}
+
+.lead {
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+/* Font Recoleta títulos "como lo hacemos", "nuestros servicios", "historias de impacto", "el equipo" */
+.font-recoleta {
+  font-family: "Fraunces", serif !important; /* El !important asegura que sobrescriba a Bootstrap si es necesario */
+  font-variation-settings: "SOFT" 100, "WONK" 1;
 }
 
 /* =========================================
