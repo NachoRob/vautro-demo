@@ -1,0 +1,24 @@
+# macOS - Archivos de sistema
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Iconos y miniaturas
+Icon?
+._*
+
+# Archivos que pueden aparecer en la raíz de volúmenes externos
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directorios de red
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
