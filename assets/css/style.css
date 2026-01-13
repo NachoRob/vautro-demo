@@ -133,8 +133,8 @@ section {
 
 /* Sección "Cómo lo hacemos" */
 .process-img-container {
-    width: 200px;  /* Ajusta el tamaño que quieras (antes tenías 350px) */
-    height: 200px; /* Debe ser igual al ancho para que sea un círculo */
+    width: 250px;  /* Ajusta el tamaño que quieras (antes tenías 350px) */
+    height: 250px; /* Debe ser igual al ancho para que sea un círculo */
     margin: 0 auto;
     overflow: hidden; /* Corta lo que sobre de la imagen */
     border-radius: 50%; /* Esto hace el círculo */
@@ -150,7 +150,7 @@ section {
 .process-img:hover {
     transform: scale(1.05);
 }
-    
+
 .icon-circle i {
     color: var(--vautro-green);
 }
