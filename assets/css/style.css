@@ -276,6 +276,68 @@ section {
 }
 
 
+/* Color de fondo oscuro basado en la imagen */
+.bg-vautro-dark-text {
+    background-color: #2b3a33 !important; /* Verde profundo apagado */
+}
+
+/* Ajustes del contenedor de servicios */
+.service-item-minimal {
+    padding: 20px;
+    transition: all 0.4s ease;
+}
+
+.service-item-minimal:hover {
+    transform: translateY(-8px);
+}
+
+.icon-minimal i {
+    color: var(--vautro-cream-logo); /* Color crema para los iconos */
+}
+
+/* Servicios */
+.saber-mas-link {
+    color: var(--vautro-cream-logo);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+}
+
+.saber-mas-link:hover {
+    color: var(--vautro-accent);
+    border-bottom: 1px solid var(--vautro-accent);
+    letter-spacing: 3px;
+}
+
+.icon-minimal i {
+    color: var(--vautro-cream-logo);
+    font-weight: 100; /* Esto refuerza el grosor delgado en Phosphor */
+    opacity: 0.8;
+}
+
+/* Si quieres que se vean un poco más grandes pero finos */
+.ph-thin {
+    font-size: 3.5rem;
+}
+
+/* Títulos de los servicios */
+.letter-spacing-1 {
+    letter-spacing: 1px;
+    font-size: 1.15rem;
+}
+
+/* Descripción de sección */
+.section-description {
+    max-width: 650px;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
 /* =========================================
    8. SISTEMA DE TIPOGRAFÍA (Inter & Fraunces)
    ========================================= */
