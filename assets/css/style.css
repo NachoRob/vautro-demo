@@ -26,8 +26,16 @@ section {
 
 /* Clase personalizada para la Navbar */
 .bg-vautro-sage {
-    background-color: var(--vautro-bg-contrast) !important; /* <--- CAMBIA ESTO */
+    /* El color #a2a583 en RGBA es (162, 165, 131) */
+    background-color: rgba(162, 165, 131, 0.75) !important; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: background-color 0.3s ease;
+}
+
+/* Opcional: Para que los textos de la nav se vean bien con el fondo */
+.bg-vautro-sage .nav-link {
+    color: #1a3c17 !important; /* Tu verde oscuro para contraste */
 }
 
 /* Colores de Utilidad */
@@ -49,6 +57,17 @@ section {
     background-color: var(--vautro-green);
     border-color: var(--vautro-green);
     transition: all 0.3s ease;
+}
+
+.bg-vautro-dark-text {
+    background-color: #2b3a33 !important;
+    
+    /* Patrón Topográfico Orgánico (Curvas de nivel) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 0 1000 1000'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='1.5'%3E%3Cpath d='M150 300c50-100 250-100 300 0s-50 250-150 250-200-150-150-250z'/%3E%3Cpath d='M100 300c60-150 340-150 400 0s-70 350-200 350-260-200-200-350z'/%3E%3Cpath d='M50 300c70-200 430-200 500 0s-90 450-250 450-320-250-250-450z'/%3E%3Cpath d='M700 700c40-80 160-80 200 0s-30 200-100 200-140-120-100-200z'/%3E%3Cpath d='M650 700c50-120 250-120 300 0s-40 300-150 300-210-180-150-300z'/%3E%3Cpath d='M200 800c100 0 150 50 150 100s-50 100-150 100-150-50-150-100 50-100 150-100z'/%3E%3Cpath d='M800 200c80 0 120 40 120 80s-40 80-120 80-120-40-120-80 40-80 80-80z'/%3E%3C/g%3E%3C/svg%3E");
+    
+    background-attachment: fixed;
+    background-size: 800px; /* Ajusta el tamaño del mapa */
+    background-position: center;
 }
 
 .btn-primary:hover {
@@ -122,7 +141,7 @@ section {
 }
 
 .hero-logo {
-    max-width: 250px;
+    max-width: 600px;
     height: auto;
 }
 
@@ -405,4 +424,86 @@ p, a, span, li, .btn, .nav-link {
         flex: 0 1 calc(50% - 2rem);
     }
 }
+}
+
+.slider-container {
+    width: 100%;
+    /* Esto define la proporción "wide" (21:9 es como el cine) */
+    aspect-ratio: 21 / 9; 
+    max-height: 700px; /* Opcional: para que no crezca infinito en pantallas enormes */
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    /* Este es el truco: la imagen se adapta para llenar el espacio sin estirarse */
+    object-fit: cover; 
+    object-position: center;
+}
+
+/* 1. Posicionar el texto sobre la imagen */
+.slide-content {
+    position: absolute;
+    bottom: 50px; /* Distancia desde abajo */
+    left: 40px;   /* Distancia desde la izquierda */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para que se lea bien */
+    z-index: 10;
+}
+
+.slide-content h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* 2. Cambiar los puntitos a blanco */
+.swiper-pagination-bullet {
+    background: white !important;
+    opacity: 0.5; /* Los no seleccionados son más transparentes */
+}
+
+/* Estilo general de la tarjeta */
+.custom-card {
+    transition: transform 0.3s ease, shadow 0.3s ease;
+    background-color: #ffffff;
+    border-radius: 15px !important;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px); /* Efecto de levante */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* El cuadro del icono */
+.icon-box i {
+    font-size: 2.5rem;
+    background: #f0fdf4; /* Un verde muy clarito de fondo */
+    padding: 10px;
+    border-radius: 12px;
+}
+
+/* Ajuste del texto */
+.card-description {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    text-align: left; /* Alineación a la izquierda para leer mejor */
+}
+
+/* Link estilo Vautro */
+.btn-vaut-link {
+    color: #198754; /* El verde de bootstrap success */
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s ease;
+}
+
+.btn-vaut-link:hover {
+    gap: 10px; /* La flechita se mueve al pasar el mouse */
+    color: #146c43;
 }
