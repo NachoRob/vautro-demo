@@ -609,3 +609,9 @@ v
     gap: 10px; /* La flechita se mueve al pasar el mouse */
     color: #146c43;
 }
+.icon-mail-custom {
+    /* Usamos el verde salvia del header */
+    color: var(--vautro-bg-contrast) !important; 
+    /* Un toque de brillo para que resalte sobre el fondo oscuro */
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.2));
+}
