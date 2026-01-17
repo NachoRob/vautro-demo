@@ -42,6 +42,7 @@ section {
 
 .text-success {
     color: var(--vautro-green) !important;
+    margin-bottom: 2px;
 }
 
 .text-dark-green {
@@ -308,6 +309,54 @@ section {
     background-image: url(../img/servicios-hero.jpg);
     background-size: cover;
 }
+
+/* Efecto Cristal Esmerilado (Glassmorphism) */
+/* Efecto Cristal Blanco (White Glassmorphism) */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.4); /* Blanco con un poco más de opacidad */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borde blanco más definido */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15); /* Sombra más suave */
+}
+
+/* Ajuste de Texto para Cristal Blanco */
+.glass-panel .text-dark-green, 
+.glass-panel h2.font-recoleta {
+    color: var(--vautro-dark-green) !important; /* Volvemos al verde oscuro para contraste */
+    text-shadow: none; /* Quitamos la sombra de texto para un look más limpio */
+}
+
+.glass-panel .text-muted, 
+.glass-panel p {
+    color: #333333 !important; /* Gris oscuro para el cuerpo del texto */
+    font-weight: 400; /* Un pelín más de peso para leer mejor sobre el blanco */
+}
+
+/* Ajuste de etiquetas de contacto (Email, Ubicación) */
+.glass-panel h6.text-white {
+    color: var(--vautro-dark-green) !important; /* Cambiamos h6 a verde oscuro */
+}
+
+.glass-panel .text-white.opacity-75 {
+    color: #444444 !important; /* Cambiamos los links/textos secundarios a gris oscuro */
+    opacity: 1 !important;
+}
+
+.glass-panel h5.text-white {
+    color: var(--vautro-dark-green) !important; /* "Síguenos" en verde oscuro */
+}
+
+/* Aseguramos que la sección de contacto tenga el overlay oscuro */
+#contacto {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url(../img/contacto-hero.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
 /* Ajustes del contenedor de servicios */
 .service-item-minimal {
     padding: 20px;
@@ -366,37 +415,37 @@ section {
 }
 
 /* =========================================
-   8. SISTEMA DE TIPOGRAFÍA (Inter & Fraunces)
+   8. SISTEMA DE TIPOGRAFÍA
    ========================================= */
 
-/* Base para todo el sitio */
-body {
+/* 1. Inter (Todo lo demás): Bajamos de 400 a 300 para un look más fino */
+body, p, a, span, li, .btn, .nav-link, .section-description {
     font-family: 'Inter', sans-serif !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300; /* Antes 400 (Normal). 300 es 'Light' */
+    letter-spacing: 0.01em; /* Un poco de aire entre letras ayuda a la lectura */
 }
 
-/* Títulos Especiales (Estilo Recoleta) */
+/* 2. Fraunces (Títulos): Bajamos de 800 a 600 o 700 */
 .font-recoleta {
-    font-family: "Fraunces", serif !important;
-    font-variation-settings: "SOFT" 100, "WONK" 1;
-    font-weight: 700; /* Fraunces usa este peso para verse "Gorda" y retro */
-    letter-spacing: -0.02em;
-}
-
-/* Forzar Inter en elementos comunes */
-p, a, span, li, .btn, .nav-link {
-    font-family: 'Inter', sans-serif !important;
-}
-
-/* Ajuste de pesos para Inter */
-.fw-bold {
-    font-weight: 700 !important;
-}
-
-.lead {
-    font-weight: 400;
+    font-family: 'Fraunces', serif !important;
+    
+    /* PRUEBA AQUÍ: 
+       600 = Semi-bold (elegante y fino)
+       700 = Bold (clásico) */
+    font-weight: 600 !important; 
+    
+    /* Bajamos el SOFT a 50 para que las esquinas sean menos "gorditas" */
+    font-variation-settings: "SOFT" 50, "WONK" 1; 
     letter-spacing: -0.01em;
+}
+
+/* Ajuste para los textos destacados que sí deban ser negrita */
+.fw-bold {
+    font-weight: 600 !important; /* En lugar de 700, una negrita más suave */
+}
+
+h2.font-recoleta {
+    font-size: 3.8rem; /* Un pelín más grande compensa el menor grosor */
 }
 
 /* =========================================
