@@ -152,17 +152,17 @@ section {
 
 /* Sección "Cómo lo hacemos" */
 .process-img-container {
-    width: 250px;  /* Ajusta el tamaño que quieras (antes tenías 350px) */
-    height: 250px; /* Debe ser igual al ancho para que sea un círculo */
+    width: 250px;  
+    height: 250px; 
     margin: 0 auto;
-    overflow: hidden; /* Corta lo que sobre de la imagen */
-    border-radius: 50%; /* Esto hace el círculo */
+    overflow: hidden; 
+    border-radius: 50%; 
 }
 
 .process-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Esto es clave: recorta la foto para que llene el círculo */
+    object-fit: cover; 
     transition: transform 0.3s ease;
 }
 
@@ -304,6 +304,10 @@ section {
     background-color: #2b3a33 !important; /* Verde profundo apagado */
 }
 
+#servicios{
+    background-image: url(../img/servicios-hero.jpg);
+    background-size: cover;
+}
 /* Ajustes del contenedor de servicios */
 .service-item-minimal {
     padding: 20px;
